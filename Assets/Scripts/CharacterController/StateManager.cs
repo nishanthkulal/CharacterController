@@ -10,17 +10,22 @@ namespace _CharacterController
         internal IPlayerInput inputHandler;
         internal IPlayerMovement playerMovement;
         internal IPlayerJump playerJump;
+        internal IPlayerAnimation playerAnimation;
         internal IdleState idleState = new IdleState();
         internal RunState runState = new RunState();
         internal JumpState jumpState = new JumpState();
 
+        void Awake()
+        {
+            inputHandler = GetComponent<IPlayerInput>();
+            playerMovement = GetComponent<IPlayerMovement>();
+            playerJump = GetComponent<IPlayerJump>();
+            playerAnimation = GetComponent<IPlayerAnimation>();
+        }
         void Start()
         {
             currentState = idleState;
             idleState.Enter(this);
-            inputHandler = GetComponent<IPlayerInput>();
-            playerMovement = GetComponent<IPlayerMovement>();
-            playerJump = GetComponent<IPlayerJump>();
         }
 
         void Update()

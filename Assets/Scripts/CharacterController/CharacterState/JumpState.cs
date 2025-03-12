@@ -5,6 +5,7 @@ namespace _CharacterController.CharacterState
     {
         public override void Enter(StateManager player)
         {
+            player.playerAnimation.HandleAnimation("Jump");
             Debug.Log("Jump State");
             player.playerJump.ApplyJump();
         }

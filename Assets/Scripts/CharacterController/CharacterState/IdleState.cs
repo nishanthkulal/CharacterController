@@ -5,6 +5,7 @@ namespace _CharacterController.CharacterState
     {
         public override void Enter(StateManager player)
         {
+            player.playerAnimation.HandleAnimation("Idle");
             Debug.Log("Idle");
         }
 

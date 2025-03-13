@@ -14,6 +14,7 @@ namespace _CharacterController
         internal IdleState idleState = new IdleState();
         internal RunState runState = new RunState();
         internal JumpState jumpState = new JumpState();
+        internal RunAndJump runAndJumpState = new RunAndJump();
 
         void Awake()
         {

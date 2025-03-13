@@ -18,7 +18,7 @@ namespace _CharacterController.CharacterState
             }
             else if (player.inputHandler.movX != 0 || player.inputHandler.movZ != 0)
             {
-                player.SwitchState(player.runState);
+                player.SwitchState(player.runAndJumpState);
             }
 
         }
